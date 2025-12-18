@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 600px;
+  margin: auto;
+}
+
+#chatBox {
+  border: 1px solid #ccc;
+  height: 300px;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 6px 0;
+}
+
+.user {
+  font-weight: bold;
+  color: blue;
+}
+
+.bot {
+  color: green;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 6px;
+}

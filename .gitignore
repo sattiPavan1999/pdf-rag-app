@@ -1,0 +1,25 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ---------- Virtual Environment ----------
+venv/
+.env
+
+# ---------- Environment variables ----------
+.env.*
+*.env
+
+# ---------- Vector DB / Local data ----------
+backend/chroma_db/
+backend/uploads/
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+
+# ---------- Editor ----------
+.vscode/
+.idea/

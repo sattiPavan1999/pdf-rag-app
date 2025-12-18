@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF Chat Agent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h2>📄 Upload PDF</h2>
+  <input type="file" id="pdfFile" accept="application/pdf" />
+  <button onclick="uploadPDF()">Upload</button>
+  <p id="uploadStatus"></p>
+
+  <hr />
+
+  <h2>💬 Chat with PDF</h2>
+
+  <div id="chatBox"></div>
+
+  <div class="chat-input">
+    <input
+      type="text"
+      id="questionInput"
+      placeholder="Ask a question about the PDF..."
+    />
+    <button onclick="askQuestion()">Send</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
