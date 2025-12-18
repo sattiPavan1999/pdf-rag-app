@@ -14,7 +14,7 @@ venv/
 
 # ---------- Vector DB / Local data ----------
 backend/chroma_db/
-*.pdf
+backend/uploads/*.pdf
 
 # ---------- OS ----------
 .DS_Store

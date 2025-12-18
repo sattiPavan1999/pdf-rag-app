@@ -5,11 +5,10 @@ from langchain_chroma import Chroma
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from dotenv import load_dotenv
-import shutil
-import os
 
 load_dotenv()
 model = ChatOpenAI(model="gpt-4o-mini")
+
 
 DB_DIR = "chroma_db"
 
@@ -25,11 +24,12 @@ def ingest_pdf(path):
     chunks = splitter.split_documents(docs)
 
     vector_store = Chroma.from_documents(
-        chunks,
-        OpenAIEmbeddings(),
+        documents=chunks,
+        embedding=OpenAIEmbeddings(),
         persist_directory=DB_DIR
     )
-    print(f"✅ Vector DB created with {vector_store._collection.count()} embeddings")
+
+    print(f"✅ New ChromaDB created with {vector_store._collection.count()} embeddings")
 
 def ask_question(question):
     db = Chroma(
