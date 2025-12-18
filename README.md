@@ -3,3 +3,4 @@ activate venv : source venv/bin/activate
 install requirements : pip install -r requirements.txt                                          
 start frontend : cd frontend -> open index.html                                        
 start backend : cd backend -> uvicorn main:app --reload
+add a .env file and paste the openAI API key in this format (OPENAI_API_KEY = "***")
