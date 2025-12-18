@@ -24,7 +24,7 @@ class QuestionRequest(BaseModel):
 
 @app.post("/upload-pdf")
 async def upload_pdf(file: UploadFile):
-    file_path = f"uploads/current.pdf"
+    file_path = f"uploads/{file.filename}"
 
     contents = await file.read()
 

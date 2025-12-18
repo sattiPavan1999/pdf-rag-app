@@ -14,8 +14,6 @@ model = ChatOpenAI(model="gpt-4o-mini")
 DB_DIR = "chroma_db"
 
 def ingest_pdf(path):
-    if os.path.exists(DB_DIR):
-        shutil.rmtree(DB_DIR)
 
     loader = PyPDFLoader(path)
     docs = loader.load()
