@@ -1,0 +1,14 @@
+{
+  "attention-is-all-you-need.pdf": {
+    "filename": "attention-is-all-you-need.pdf",
+    "uploaded_at": "2025-12-24T14:48:09.132229",
+    "num_chunks": 64,
+    "status": "processed"
+  },
+  "Senior Developer (Java)_Thoughtworks.pdf": {
+    "filename": "Senior Developer (Java)_Thoughtworks.pdf",
+    "uploaded_at": "2025-12-24T14:55:10.429212",
+    "num_chunks": 8,
+    "status": "processed"
+  }
+}

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: pdf-rag-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - APP_ENV=${APP_ENV:-production}
+      - DEBUG=${DEBUG:-False}
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+      - ./backend/chroma_db:/app/backend/chroma_db
+      - ./backend/pdf_metadata.json:/app/backend/pdf_metadata.json
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    image: nginx:alpine
+    container_name: pdf-rag-frontend
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  uploads:
+  chroma_db:
